@@ -1,0 +1,48 @@
+html {
+	max-width: 960px;
+	width: 100%;
+	margin: 0 auto;
+	
+}
+
+.breadcrumb {
+	margin: 0 auto;
+	overflow: auto;
+	float: left;
+}
+
+.jumbotron {
+	/*padding: 60px 60px;*/
+	color: #5aaaaf;
+}
+
+
+#pTest {
+	color: blue;
+	font-size: 24px;
+
+
+}
+
+#submit {
+	width: 100%;
+}
+
+select {
+	color: blue;
+}
+
+h4 {
+	color: darkred;
+}
+
+img {
+	width: 400px;
+	height: 400px;
+}
+
+#mypmodal {
+	font-weight: 700;
+	color: red;
+	font-size: 24;
+}
