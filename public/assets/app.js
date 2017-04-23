@@ -131,7 +131,7 @@ function runQuery() {
                     var mypic = a;
                     $("#modalHead").html(name);
                     $("#myfriendspic").attr("src", data[mypic].photo);
-                    $("#mypmodal").html("You're best friend is now " + data[mypic].name);
+                    $("#mypmodal").html("Seek out " + data[mypic].name + " to start building your Alliance");
                     $("#sound").attr("src", data[mypic].sound);
                 }
 
