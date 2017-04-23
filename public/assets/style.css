@@ -46,3 +46,8 @@ img {
 	color: red;
 	font-size: 24;
 }
+
+
+#myModal #myModal2 {
+	align-content: center;
+}
