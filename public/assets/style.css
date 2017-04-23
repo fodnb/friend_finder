@@ -1,122 +1,140 @@
 html {
-	
-	width: 100%;
-
-	background-image: url("./images/starwarsbackground.jpg");
+    width: 100%;
 }
 
- * {
-	background-image: url("./images/starwarsbackground.jpg");
-
+* {
+    background-image: url("./images/starwarsbackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-
 
 #friendmodalButton {
-	background-color: black;
-	color: blue;
-
+    background-color: black;
+    color: blue;
 }
 
 .breadcrumb {
-	margin: 0 auto;
-	overflow: auto;
-	float: left;
+    margin: 0 auto;
+    overflow: auto;
+    float: left;
 }
 
 .jumbotron {
-	color: yellow;
+    color: yellow;
 }
 
-
 #pTest {
-	/*color: yellow;*/
-	font-size: 40px;
-	/*font-weight: 700;*/
-color: lightblue;
-	text-shadow: 1.5px 1.5px blue;
-	font-weight: 700;
-	/*font-size: 24px	*/
-	
+	text-align: center;	
+    /*color: yellow;*/
+    font-size: 30px;
+    /*font-weight: 700;*/
+    color: lightblue;
+    text-shadow: 1.5px 1.5px blue;
+    font-weight: 700;
+    /*font-size: 24px	*/
 }
 
 #submit {
-	width: 100%;
-	color: lightblue;
-	font-size: 24px;
-	
+    width: 100%;
+    color: lightblue;
+    font-size: 24px;
 }
 
-select{
-	background: black;
-	color: blue;
+select {
+    background: black;
+    color: blue;
 }
-#name #pic{
-	background: black;
-	color: blue;
+
+#name #pic {
+    background: black;
+    color: blue;
 }
+
 h4 {
-	color: lightblue;
-	text-shadow: 1px 1px blue;
-	font-weight: 700;
-	font-size: 24px
+    color: lightblue;
+    text-shadow: 1px 1px blue;
+    font-weight: 700;
+    font-size: 24px
 }
 
 img iframe {
-	background-color: black;
-	width: 100%;
-	height: 400px;
+    background-color: black;
+    width: 100%;
+    height: 400px;
 }
 
 #mypmodal {
-	font-weight: 700;
-	color: red;
-	font-size: 24;
+    font-weight: 700;
+    color: red;
+    font-size: 24;
 }
 
-
 #mypmodal2 {
-	font-size: 24px;
- 	color: lime;
-	text-shadow: 1px 1px red;
-	font-weight: 700;
+    font-size: 24px;
+    color: lime;
+    text-shadow: 1px 1px red;
+    font-weight: 700;
 }
 
 #pmodalTitle2 {
-	font-size: 35px;
+    font-size: 35px;
 }
 
 #modalButton {
-	background-color: yellow;
-	font-size: 20px;
-	color: blue;
-	font-weight: 700;
-	font-family: "times new roman";
-	letter-spacing: 3px;
+    background-color: yellow;
+    font-size: 20px;
+    color: blue;
+    font-weight: 700;
+    font-family: "times new roman";
+    letter-spacing: 3px;
 }
 
 #survey {
-	background: black;
-	width: 40%;
-	color: yellow;
-	font-weight: 700;
-	border-color: red;
-
+    background: black;
+    width: 40%;
+    color: yellow;
+    font-weight: 700;
+    border-color: red;
 }
 
 a {
-	color: yellow;
+    color: yellow;
 }
+
 h1 {
-	font-size: 24px;
+    font-size: 24px;
 }
 
 #myfriendspic {
-	max-height: 400px;
-	max-width: 400px;
-	width: 75%;
-	height: 75%;
+    max-height: 400px;
+    max-width: 400px;
+    width: 75%;
+    height: 75%;
 }
 
 #modalHead {
-	font-size: 24px;
+    font-size: 24px;
+}
+
+#logo {
+    height: 200px;
+    width: 200px;
+}
+
+#name[type=text] {
+	background-color: ivory;
+ 	 text-transform: uppercase;
+    /*text-shadow: 1px 1px red;*/
+    /*font-weight: 700;*/
+    font-size: 24px
+
+}
+
+.container {
+	text-align: center;
+}
+
+#newlogo {
+	/*height: 250px;*/
+	width: 400px;
 }

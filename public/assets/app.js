@@ -1,4 +1,6 @@
-var questions = ["Star Wars is Awesome", "Peace by totalitarianism is the only way to secure peace", "add quest", "add quest", "Return of the Jedi is better than Empire", "All the problems with the Jedi was Yodas fault", "Jar Jar Binks was a sith lord", "The death star was awesome we need a new Death Star", "I'm looking forward to Star Wars Episode 8", "A wookie is a weird bear thing", "I grew up and with the ewoks and loved them", "Star Wars is much better than Star Trek"];
+// var questions = ["Star Wars is Awesome", "Peace by totalitarianism is the only way to secure peace", "add quest", "add quest", "Return of the Jedi is better than Empire", "All the problems with the Jedi was Yodas fault", "Jar Jar Binks was a sith lord", "The death star was awesome we need a new Death Star", "I'm looking forward to Star Wars Episode 8", "A wookie is a weird bear thing", "I grew up and with the ewoks and loved them", "Star Wars is much better than Star Trek"];
+var questions = ["Peace is a lie, there is only Passion", "Through Passion I gain Strength", "Through Strength I gain Power", "Through power I gain Vicory", "Through Victory, my chains are broken, THE FORCE shall set me free", "There is no Emotion there is Peace", " There is no ignorance there is only Knowledge", "There is no Passion there is Serenity", "There is no Chaos there is Harmony", "There is no Death there is THE FORCE", "There is no dark side, nor a light side there is only THE FORCE", "There is no good without evil but evil must not be allowed to flourish"];
+
 console.log(questions);
 var name;
 
