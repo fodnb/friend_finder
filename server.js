@@ -13,7 +13,7 @@ var PORT = process.env.PORT || 3000;
 
 // })
 
-
+//changed this to false was true..... to try and fix heroku
 app.use(bodyParser.urlencoded({ extended: true}));
 
 app.use(bodyParser.json());
@@ -22,7 +22,7 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 console.log(__dirname);
 
-app.use("/cssFiles", express.static(__dirname + "/public/assets"));
+app.use("/cssfiles", express.static(__dirname + "/public/assets"));
 
 
 require("./routing/api-routes.js")(app);
