@@ -145,7 +145,7 @@ $("#submit").on("click", function() {
     // if form filled === true at the end we calculate the totals otherwise we have a modal appear
     //saying to fix the form entries
     // if form is filled correctly it calulates the totals and matches you with your new BFF
-    var formFilled = true; 
+    var formFilled = true;
     var answers = []; // clearing answers each time your hit click
     var missedArray = []; // clearing missed array each time you hit click
     event.preventDefault();
@@ -186,8 +186,8 @@ $("#submit").on("click", function() {
     var choice12 = $('#drop12 option:selected').val()
     answers.push(parseInt(choice12));
 
-// the following 2 if statements and the for loop are checking if everything is filled out and returning false
-// if something is empty    
+    // the following 2 if statements and the for loop are checking if everything is filled out and returning false
+    // if something is empty    
     if ($("#name").val().trim() === '') {
         formFilled = false;
         console.log(formFilled);
@@ -212,12 +212,12 @@ $("#submit").on("click", function() {
     if (formFilled === false) {
         $("#mypmodal2").html("Please fill out the following: " + " " + missedArray);
         $("#myModal2").modal({ backdrop: false });
-       
+
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////    
 
-// if form is filled out correctly then we get a new friend and post the results to our api
+    // if form is filled out correctly then we get a new friend and post the results to our api
 
     if (formFilled === true) {
         var newFriend = {
@@ -248,4 +248,3 @@ $("#submit").on("click", function() {
 
     } //form filled true
 }); // end click event
-
