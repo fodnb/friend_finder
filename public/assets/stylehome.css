@@ -1,0 +1,6 @@
+/*this was only used to make the background on the home page
+all black because when I do the same for both pages I get holes in the colors*/
+*{
+background-color: black;
+
+}

@@ -1,11 +1,29 @@
 html {
     width: 100%;
 }
+#surveybody {
+	background-image: url("./images/bluestar.jpg");
+    font-family: "times new roman";
+	font-weight: 700;
+	background-color: black;
+}
+
+#homejumbo{
+		background-image: url("./images/starwarsbackground.jpg");
+		align-content: center;
+		text-align: center;
+		padding-bottom: 0;
+		padding: 0;
+		margin: 0;
+		border: 0;
+}
+
+
 
 * {
-    background-image: url("./images/starwarsbackground.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+
 }
 
 #friendmodalButton {
@@ -17,9 +35,12 @@ html {
     margin: 0 auto;
     overflow: auto;
     float: left;
+    background-color: black;
 }
 
 .jumbotron {
+
+
     color: yellow;
 }
 
@@ -36,8 +57,13 @@ html {
 
 #submit {
     width: 100%;
-    color: lightblue;
-    font-size: 24px;
+    margin-top: 15px;
+    font-size: 26px;
+    letter-spacing: 8px;
+    background-color: black;
+	opacity: .75;
+	color: powderblue;
+	text-shadow: 2px 2px blue;
 }
 
 select {
@@ -45,16 +71,15 @@ select {
     color: blue;
 }
 
-#name #pic {
-    background: black;
-    color: blue;
+#name {
+    margin-bottom: 20px;
 }
 
 h4 {
-    color: lightblue;
-    text-shadow: 1px 1px blue;
+    color: powderblue;
+    text-shadow: 2px 1px blue;
     font-weight: 700;
-    font-size: 24px
+    font-size: 30px
 }
 
 img iframe {
@@ -66,13 +91,13 @@ img iframe {
 #mypmodal {
     font-weight: 700;
     color: red;
-    font-size: 24;
+    font-size: 36;
 }
 
 #mypmodal2 {
     font-size: 24px;
-    color: lime;
-    text-shadow: 1px 1px red;
+    color: skyblue;
+    text-shadow: 1px 1px blue;
     font-weight: 700;
 }
 
@@ -81,12 +106,13 @@ img iframe {
 }
 
 #modalButton {
-    background-color: yellow;
+    background-color: black;
     font-size: 20px;
-    color: blue;
+    color: yellow;
     font-weight: 700;
-    font-family: "times new roman";
     letter-spacing: 3px;
+    width: 100%;
+    border: 3px solid red;
 }
 
 #survey {
@@ -122,10 +148,9 @@ h1 {
 }
 
 #name[type=text] {
-	background-color: ivory;
+	background-color: black;
+	margin-color: black;
  	 text-transform: uppercase;
-    /*text-shadow: 1px 1px red;*/
-    /*font-weight: 700;*/
     font-size: 24px
 
 }
@@ -134,7 +159,29 @@ h1 {
 	text-align: center;
 }
 
+
+
 #newlogo {
 	/*height: 250px;*/
 	width: 400px;
 }
+
+input[type="text"] {
+	background-color: black;
+		text-align: left;
+		padding: 1.5%;
+}
+
+.modal-backdrop {
+	background-color: grey;
+	
+}
+
+.modal-content {
+	background-color: black;
+	text-align: center;		 	
+
+}
+
+
+

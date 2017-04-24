@@ -1,11 +1,11 @@
 // var questions = ["Star Wars is Awesome", "Peace by totalitarianism is the only way to secure peace", "add quest", "add quest", "Return of the Jedi is better than Empire", "All the problems with the Jedi was Yodas fault", "Jar Jar Binks was a sith lord", "The death star was awesome we need a new Death Star", "I'm looking forward to Star Wars Episode 8", "A wookie is a weird bear thing", "I grew up and with the ewoks and loved them", "Star Wars is much better than Star Trek"];
+
+//Statements from a star wars force site showing the difference between the light/dark and middle grounds.  
 var questions = ["Peace is a lie, there is only Passion", "Through Passion I gain Strength", "Through Strength I gain Power", "Through power I gain Vicory", "Through Victory, my chains are broken, THE FORCE shall set me free", "There is no Emotion there is Peace", " There is no ignorance there is only Knowledge", "There is no Passion there is Serenity", "There is no Chaos there is Harmony", "There is no Death there is THE FORCE", "There is no dark side, nor a light side there is only THE FORCE", "There is no good without evil but evil must not be allowed to flourish"];
+var name; // this will hold the value of the name a client enters
 
-console.log(questions);
-var name;
-
-
-
+// function that takes the questions out of the array and populates the page with the questions and select/options
+// and gives them values to calculate the score
 function putQuestions() {
     $("#questionsDiv").empty();
     var count = 1;
@@ -56,7 +56,7 @@ function putQuestions() {
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+// This is where I'm running my ajax call against my api from the friends.js file
 function runQuery() {
     var currentURL = window.location.origin;
 
@@ -70,39 +70,28 @@ function runQuery() {
             console.log(data.length + "length of data from ajax call");
             var end = data.length - 1;
 
-            // console.log(newestData[2].scores + 'newdata');
-            // console.log(end + "this is the end");
-            // console.log(data[1].scores[1]);
-
-            // console.log(parseInt(data[3].scores));
-            // console.log(data[0].photo)
             var myNumber = data[end].scores;
 
             var total = 0;
             var myCount = 0;
             var difference = 0;
 
-            // n < data.length for comparing added friends but just 10 for inital star wars charachters
+            // n < data.length for comparing added friends but just 10 for inital star wars charachters 
+            // in the walkthrough on the site it was a one and done fill out and get a match
+            // so I took that and since I'm making this friend finder app a star wars match maker I'm only allowing 
+            // the app to determine your match from the initial stored results.  I could take out the limit of 11 
+            // to give the client any match in the api but I don't feel that suits my purpose
             for (var n = 0; n < 11; n++) {
 
-
-
+                // I'm using this for loop to calculate the clients differences from each of the api/comparisons allowed
+                // We're calculating the difference from question to question not total points vs total points
                 for (var i = 0; i < questions.length; i++) {
                     difference = Math.abs(parseInt(data[end].scores[i]) - parseInt(data[myCount].scores[i]));
-
-
                     total = total + difference;
-
-
                 } //ends i for loop
-                console.log(total);
+                totalsArray.push(total); // this is where the totals are stored to compatre
 
-
-
-
-                totalsArray.push(total);
-
-
+                // this is resoring these values back to 0 before going back into the n for loop
                 total = 0;
                 difference = 0;
                 myCount++;
@@ -111,20 +100,19 @@ function runQuery() {
 
             } // ends n for loop
             var compareArray = totalsArray.pop();
-            console.log(totalsArray);
 
 
-            // function getMaxOfArray(numArray) {
-            //   return Math.max.apply(null, numArray);
-            //  console.log(parseInt(bestMatch) + " this is my best match");
-            // }
-            // getMaxOfArray(totalsArray);
+
+            // this function will give the min value in the function so I can compare
 
             var min = totalsArray.reduce(function(a, b) {
                 return Math.min(a, b);
             });
             console.log(min);
 
+
+            //comparing the min value against the values in the array and gives you your match that had
+            // the minimum value so the === is comparing against the min difference found above
             for (var a = 0; a < totalsArray.length; a++) {
                 if (totalsArray[a] === min) {
                     console.log(a);
@@ -133,6 +121,7 @@ function runQuery() {
                     $("#myfriendspic").attr("src", data[mypic].photo);
                     $("#mypmodal").html("Seek out " + data[mypic].name + " to start building your Alliance");
                     $("#sound").attr("src", data[mypic].sound);
+
                 }
 
             }
@@ -146,19 +135,21 @@ function runQuery() {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// running our function and adding questions to the page
 putQuestions();
-var answers = [];
+
+// initializing our click callback event to grab our answers from the form
+// we validate that all areas have been filled out
 
 $("#submit").on("click", function() {
-
-
-
-    var formFilled = true;
-    // console.log(formFilled);
+    // if form filled === true at the end we calculate the totals otherwise we have a modal appear
+    //saying to fix the form entries
+    // if form is filled correctly it calulates the totals and matches you with your new BFF
+    var formFilled = true; 
+    var answers = []; // clearing answers each time your hit click
+    var missedArray = []; // clearing missed array each time you hit click
     event.preventDefault();
-
-
-
+    // grabbing the values from the questions 
     var choice1 = $('#drop1 option:selected').val()
     answers.push(parseInt(choice1));
 
@@ -195,86 +186,66 @@ $("#submit").on("click", function() {
     var choice12 = $('#drop12 option:selected').val()
     answers.push(parseInt(choice12));
 
-
+// the following 2 if statements and the for loop are checking if everything is filled out and returning false
+// if something is empty    
     if ($("#name").val().trim() === '') {
         formFilled = false;
-        $("#mypmodal2").html("Please fill in your name");
         console.log(formFilled);
-        $("#myModal2").modal();
+        missedArray.push("name");
+    }
 
-    } else {
+    if ($("#pic").val().trim() === '') {
+        formFilled = false;
+        missedArray.push("picture link");
+    }
 
-        if ($("#pic").val().trim() === '') {
+
+    for (var i = 0; i < questions.length; i++) {
+        if (isNaN(answers[i])) {
+            var number = i + 1;
+            missedArray.push(number);
             formFilled = false;
-            $("#mypmodal2").html("Please add a link to a picture");
-            $("#myModal2").modal();
-        } else {
-
-            var missedArray = [];
-            for (var i = 0; i < questions.length; i++) {
-                if (isNaN(answers[i])) {
-                    var number = i + 1;
-                    missedArray.push(number);
-
-                    $("#myModal2").modal();
-
-                    formFilled = false;
-                    console.log(formFilled);
-                }
-            }
-            $("#mypmodal2").html("Please fill out question# " + " " + missedArray);
-
-            // console.log(answers);
-            ////////////////////////////////////////////////////////////////////////////////////////////////////    
-            if (formFilled === true) {
-                var newFriend = {
-
-                    name: $("#name").val().trim(),
-                    photo: $("#pic").val().trim(),
-                    scores: [choice1, choice2, choice3, choice4, choice5, choice6, choice7, choice8, choice9, choice10, choice11, choice12 ]
-
-                }
-
-                // $("#myfriendspic").attr("src", " ")
-
-
-
-                name = $("#name").val().trim();
-
-                $('select').val("");
-                $('input').val("");
-
-                var currentUrl = window.location.origin;
-
-                $.post(currentUrl + "/api/friends", newFriend, function(data) {
-                    console.log(data);
-                }); // ends post
-
-                count = 1;
-
-
-
-                runQuery();
-                $("#myModal").modal();
-
-
-
-            } //form filled true
+            console.log(formFilled);
         }
     }
-    answers = [];
+
+    if (formFilled === false) {
+        $("#mypmodal2").html("Please fill out the following: " + " " + missedArray);
+        $("#myModal2").modal({ backdrop: false });
+       
+    }
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////    
+
+// if form is filled out correctly then we get a new friend and post the results to our api
+
+    if (formFilled === true) {
+        var newFriend = {
+
+            name: $("#name").val().trim(),
+            photo: $("#pic").val().trim(),
+            scores: [choice1, choice2, choice3, choice4, choice5, choice6, choice7, choice8, choice9, choice10, choice11, choice12]
+
+        }
+
+        name = $("#name").val().trim();
+
+        $('select').val("");
+        $('input').val("");
+
+        var currentUrl = window.location.origin;
+
+        $.post(currentUrl + "/api/friends", newFriend, function(data) {
+            console.log(data);
+        }); // ends post
+
+        count = 1;
+
+        runQuery();
+        $("#myModal").modal();
+        answers = [];
 
 
+    } //form filled true
+}); // end click event
 
-
-
-});
-
-// $("#modalButton").on('click', function(){
-
-//     var newA = $("<a>");
-//     newA.attr("href", "/home")
-//     $("#modalButton").append(newA);
-
-
-// })

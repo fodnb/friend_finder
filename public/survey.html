@@ -2,9 +2,9 @@
 <html>
 
 <head>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SURVEY</title>
-     <link rel="icon" type="image/bmp" href="cssFiles/images/favicon2.bmp">
+    <link rel="icon" type="image/bmp" href="cssFiles/images/favicon2.bmp">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -12,20 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="cssFiles/style.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
 
-
-
-
-    <!--need to add javascipt file for bootstrap! -->
-
-
-
-
-
-</head>	
-
-<body>
+<body id="surveybody">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -34,76 +24,63 @@
             <br>
         </div>
         <div class="row">
-            <div class="input-group">
-                <span class="input-group-addon" </span>
-                
-                <input id="name" type="text" class="form-control" aria-describedby="basic-addon1" placeholder="Name:">
+            <div class="input-group col-sm-12">
+              
+                <input id="name" type="text" class="form-control" aria-describedby="sizing-addon2" placeholder="Please enter your name:">
             </div>
         </div>
         <div class="row">
-            <div class="input-group">
-                <span class="input-group-addon" </span>
-                <input id="pic" type="text" class="form-control" aria-describedby="basic-addon1" placeholder="Link to pic:">
+            <div class="input-group col-sm-12">
+              
+                <input id="pic" type="text" class="form-control" aria-describedby="sizing-addon2" placeholder="Please provide a link to your picture:">
             </div>
         </div>
         <div id="questionsDiv">
         </div>
         <div>
-            <button id="submit" class="btn-primary buttonH" style="margin-top: 20px;"> SUBMIT </button>
+            <button id="submit" class="btn-primary buttonH"> SUBMIT </button>
         </div>
     </div>
-
-    <embed src="cssFiles/audio/rebel-theme.mp3" autostart="true" loop="true" width="2" height="0">
-</embed>
-
-
-
-
-
-	<div class="modal fade" id="myModal" role="dialog">
-	<div class="modal-dialog">
-
-    <div class="modal-content">
-   	<div class="modal-header">
-   	<button type="button" class="close" data-dismiss="modal">&times;</button>
-   	<h4 class="modal-title" id="modalHead"></h4>
-   	</div>
-   	<div class="modal-body">
-   	<p id="mypmodal">some text in the modal.</p>
-   	<img id="myfriendspic">
-   	</div>
-        <embed id="sound" autostart="true" loop="true" width="2" height="0">
-</embed>
-   	<div class="modal-footer">
-   	<button id="friendmodalButton" type="button" class="btn btn-default buttonH" data-dismiss="modal"> CLOSE </button>
-   	</div>
-   	</div>
-   	</div>
-   	</div>
-
-
-	<div class="modal fade" id="myModal2" role="dialog">
-	<div class="modal-dialog">
-
-    <div class="modal-content">
-   	<div class="modal-header">
-   	<button type="button" class="close" data-dismiss="modal">&times;</button>
-   	<h4 class="modal-title" id="pmodalTitle2"> "Uh, everything's under control. Situation normal" </h4>
-   	</div>
-   	<div class="modal-body">
-   	<p id="mypmodal2">some text in the modal.</p>
-   	<img id="myfriendspic2" src="cssFiles/images/giphy.gif" loop="">
-
-   	</div>
-    <embed src="cssFiles/audio/jabba-the-hutt-laughing.mp3" autostart="true" loop="true" width="2" height="0">
-</embed>
-
-   	<div class="modal-footer">
-   	<button id="modalButton" type="button" class="btn btn-default buttonH" data-dismiss="modal"> FIX IT </button>
-   	</div>
-   	</div>
-   	</div>
-   	</div>
+    <embed src="cssFiles/audio/rebel-theme.mp3" id="rebelsong" autostart="true" loop="true" width="2" height="0">
+    </embed>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" id="modaling">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="modalHead"></h4>
+                </div>
+                <div class="modal-body">
+                    <p id="mypmodal">some text in the modal.</p>
+                    <img id="myfriendspic">
+                </div>
+                <embed id="sound" autostart="true" loop="true" width="2" height="0">
+                </embed>
+                <div class="modal-footer">
+                    <button id="friendmodalButton" type="button" class="btn btn-default buttonH" data-dismiss="modal"> CLOSE </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal2" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content" id="modaling">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="pmodalTitle2"> "Uh, everything's under control. Situation normal" </h4>
+                </div>
+                <div class="modal-body">
+                    <p id="mypmodal2">some text in the modal.</p>
+                    <img id="myfriendspic2" src="cssFiles/images/giphy.gif" loop="">
+                </div>
+                <embed src="cssFiles/audio/jabba-the-hutt-laughing.mp3" autostart="true" loop="true" width="2" height="0">
+                </embed>
+                <div class="modal-footer">
+                    <button id="modalButton" type="button" class="btn btn-default buttonH" data-dismiss="modal"> FIX IT </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script type="text/javascript" src="cssFiles/app.js"></script>
 
