@@ -142,6 +142,11 @@ putQuestions();
 // we validate that all areas have been filled out
 
 $("#submit").on("click", function() {
+
+    //lowers the main volume when button is clicked so you can hear more clearly the secondary audio
+    $("#myaudiosurvey").prop("volume", .2);
+
+
     // if form filled === true at the end we calculate the totals otherwise we have a modal appear
     //saying to fix the form entries
     // if form is filled correctly it calulates the totals and matches you with your new BFF
@@ -247,4 +252,23 @@ $("#submit").on("click", function() {
 
 
     } //form filled true
+
+
 }); // end click event
+
+
+//added these to return the audio back to 100% after the modals are closed
+
+$("#friendmodalButton").on("click", function() {
+
+    $("#myaudiosurvey").prop("volume", 1);
+
+
+});
+
+
+
+$("#modalButton").on("click", function() {
+    $("#myaudiosurvey").prop("volume", 1);
+
+});

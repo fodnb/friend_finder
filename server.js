@@ -12,13 +12,13 @@ var PORT = process.env.PORT || 3000;
 // 	response.send("hello world");
 
 // })
-
+		
 //changed this to false was true..... to try and fix heroku
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 app.use(bodyParser.text());
-app.use(bodyParser.json({type:'application/vnd.api+json'}));
+app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 console.log(__dirname);
 
@@ -31,9 +31,7 @@ require("./routing/html-routes.js")(app);
 
 
 
-app.listen(PORT, function(){
-console.log("app listening on PORT:" + PORT);
+app.listen(PORT, function() {
+    console.log("app listening on PORT:" + PORT);
 
 });
-
-

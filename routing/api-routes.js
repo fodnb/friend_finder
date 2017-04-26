@@ -4,7 +4,7 @@
 // a post route with /api/friends . this will be used to handle incoming survey results.  This route will also be used to handle the compatibility logic.
 
 
-var friendData= require("../data/friends.js");
+var friendData = require("../data/friends.js");
 
 module.exports = function(app) {
     app.get('/api/friends', function(request, response) {
@@ -14,7 +14,7 @@ module.exports = function(app) {
 
 
     app.post('/api/friends', function(request, response) {
-    	friendData.push(request.body);
+        friendData.push(request.body);
 
     })
 

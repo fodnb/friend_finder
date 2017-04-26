@@ -1,29 +1,27 @@
 html {
     width: 100%;
 }
+
 #surveybody {
-	background-image: url("./images/bluestar.jpg");
+    background-image: url("./images/bluestar.jpg");
     font-family: "times new roman";
-	font-weight: 700;
-	background-color: black;
+    font-weight: 700;
+    background-color: black;
 }
 
-#homejumbo{
-		background-image: url("./images/starwarsbackground.jpg");
-		align-content: center;
-		text-align: center;
-		padding-bottom: 0;
-		padding: 0;
-		margin: 0;
-		border: 0;
+#homejumbo {
+    background-image: url("./images/starwarsbackground.jpg");
+    align-content: center;
+    text-align: center;
+    padding-bottom: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
 }
-
-
 
 * {
     background-size: cover;
     background-repeat: no-repeat;
-
 }
 
 #friendmodalButton {
@@ -39,20 +37,18 @@ html {
 }
 
 .jumbotron {
-
-
     color: yellow;
 }
 
 #pTest {
-	text-align: center;	
+    text-align: center;
     /*color: yellow;*/
     font-size: 30px;
     /*font-weight: 700;*/
     color: lightblue;
     text-shadow: 1.5px 1.5px blue;
     font-weight: 700;
-    /*font-size: 24px	*/
+    /*font-size: 24px   */
 }
 
 #submit {
@@ -61,9 +57,9 @@ html {
     font-size: 26px;
     letter-spacing: 8px;
     background-color: black;
-	opacity: .75;
-	color: powderblue;
-	text-shadow: 2px 2px blue;
+    opacity: .75;
+    color: powderblue;
+    text-shadow: 2px 2px blue;
 }
 
 select {
@@ -148,40 +144,32 @@ h1 {
 }
 
 #name[type=text] {
-	background-color: black;
-	margin-color: black;
- 	 text-transform: uppercase;
+    background-color: black;
+    margin-color: black;
+    text-transform: uppercase;
     font-size: 24px
-
 }
 
 .container {
-	text-align: center;
+    text-align: center;
 }
 
-
-
 #newlogo {
-	/*height: 250px;*/
-	width: 400px;
+    /*height: 250px;*/
+    width: 400px;
 }
 
 input[type="text"] {
-	background-color: black;
-		text-align: left;
-		padding: 1.5%;
+    background-color: black;
+    text-align: left;
+    padding: 1.5%;
 }
 
 .modal-backdrop {
-	background-color: grey;
-	
+    background-color: grey;
 }
 
 .modal-content {
-	background-color: black;
-	text-align: center;		 	
-
+    background-color: black;
+    text-align: center;
 }
-
-
-
