@@ -10,7 +10,17 @@ html {
     background-color: black;
 }
 
-#homejumbo {
+#homejumbo1 {
+    background-image: url("./images/starwarsbackground.jpg");
+    align-content: center;
+    text-align: center;
+    padding-bottom: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+#homejumbo2 {
     background-image: url("./images/starwarsbackground.jpg");
     align-content: center;
     text-align: center;
