@@ -4,11 +4,17 @@ html {
 }
 
 #surveybody {
-    background-image: url("./images/bluestar.jpg");
+  background: url("./images/bluestar.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+/*    background-image: url();
     font-family: "times new roman";
     font-weight: 700;
     background-color: black;
-    background-size: cover;
+    background-size: cover;*/
 }
 
 #homejumbo1 {
